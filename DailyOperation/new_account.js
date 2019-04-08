@@ -1,7 +1,8 @@
 var FIBOS = require('fibos.js');
+var config = require('../config.json');
 var fibos_client = FIBOS({
-  chainId: '68cee14f598d88d340b50940b6ddfba28c444b46cd5f33201ace82c78896793a',
-  keyProvider: 'creator_priKey',
+  chainId: config.chainId,
+  keyProvider: config.private_key,
   httpEndpoint: 'http://api.testnet.fo',
   logger: {
     log: null,
