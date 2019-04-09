@@ -32,13 +32,19 @@ var config = {
 
 2. 注册BP详情
 
-   register_bp_details.js
+   ***注** 该BP账号必须被投票数不为0才可以添加节点信息
 
-   通过调用getTableRowsSync方法，查看列表
+   通过调用getTableRowsSync方法，查看列表,调用setSync方法，添加节点信息
 
-   通过调用setSync方法，添加节点信息
+   操作：
+
+   fibos unregister_bp_details_set.js
 
    通过调用delSync方法，删除节点信息
+
+   操作：
+
+   fibos unregister_bp_details_del.js
 
 3. 领取工资
 
@@ -66,7 +72,7 @@ var config = {
 
    发起领取工资操作：
 
-   fibos Unregister_bp.js
+   fibos unregister_bp.js
 
    
 
