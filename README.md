@@ -34,13 +34,13 @@ var config = {
 
    ***注** 该BP账号必须被投票数不为0才可以添加节点信息
 
-   通过调用getTableRowsSync方法，查看列表,调用setSync方法，添加节点信息
+   通过调用getTableRowsSync方法，查看列表,调用setSync方法，添加节点信息。
 
    操作：
 
    fibos unregister_bp_details_set.js
 
-   通过调用delSync方法，删除节点信息
+   通过调用delSync方法，删除节点信息。
 
    操作：
 
