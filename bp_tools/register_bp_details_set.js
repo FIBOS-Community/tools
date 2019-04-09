@@ -19,7 +19,7 @@ var fibos = FIBOS({
 
 
 let producerjson = {
-    "producer_account_name": "fibosrockskr",
+    "producer_account_name": config.producerName,
     "org": {
         "candidate_name": "Fibos Rocks",
         "website": "http://fibos.rocks",
