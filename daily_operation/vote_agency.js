@@ -19,4 +19,4 @@ var ctx = fibos.contractSync('eosio');
 var fibosnodes = ['','','']; // 具体账号数据请开发者根据实际情况自行填写
 fibosnodes.sort()；
 
-var a = ctx.voteproducerSync('account', '', fibosnodes); // 具体账号数据请开发者根据实际情况自行填写
+var a = ctx.voteproducerSync(account, '', fibosnodes); // 具体账号数据请开发者根据实际情况自行填写

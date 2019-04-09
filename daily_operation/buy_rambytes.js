@@ -13,6 +13,6 @@ var r = ctx.buyrambytesSync({
       receiver: "receiver", //接受内存的账号
       bytes: bytes  //购买的内存大小（字节）
 },{
-    authorization: '私钥对应的账号' 
+    authorization: config.producerName //私钥对应的账号 
 });
 console.log(r);

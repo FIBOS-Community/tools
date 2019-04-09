@@ -13,6 +13,6 @@ var r = ctx.buyramSync({
       receiver: "receiver", //接受存储资源的账号
       quant: "quant" //购买存储资源所用的通证数量
 },{
-    authorization: '私钥对应的账号' 
+    authorization: config.producerName //私钥对应的账号 
 });
 console.log(r);

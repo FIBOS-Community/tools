@@ -16,7 +16,7 @@ fibos = FIBOS({
 
 let ctx = fibos.contractSync('eosio');
 ctx.updateauthSync({
-  account: name,//修改权限的账户
+  account: config.producerName,//修改权限的账户
   permission: 'permission',
   parent: 'parent',
   auth: {
@@ -28,5 +28,5 @@ ctx.updateauthSync({
   }
 });
 
-var r = fibos.getAccountSync(name);
+var r = fibos.getAccountSync(config.producerName);
 console.notice(r);

@@ -15,6 +15,6 @@ var r = ctx.undelegatebwSync({
       unstake_net_quantity: 'unstake_net_quantity', //解除用来获取带宽资源的通证数量
       unstake_cpu_quantity: 'unstake_cpu_quantity' //解除用来获取计算资源的通证数量
 },{
-    authorization: '私钥对应的账号' 
+    authorization: config.producerName //私钥对应的账号 
 });
 console.log(r);

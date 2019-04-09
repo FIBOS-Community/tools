@@ -16,6 +16,6 @@ var r = ctx.delegatebwSync({
       stake_cpu_quantity: "stake_cpu_quantity",  //  抵押者为接受者抵押 FO 获取 CPU
       transfer: 0  // 代表抵押资源同时是否将对应通证转账给接受者
 },{
-    authorization: '私钥对应的账号' 
+    authorization: config.producerName //私钥对应的账号
 });
 console.log(r);
