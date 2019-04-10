@@ -1,21 +1,31 @@
-## FIBOS工具箱
+# FIBOS 工具箱
 
-## BP工具
+## BP 工具
 
-config.json文件参数说明
+1. #### 配置 config.json 参数
 
-```
-var config = {
-  'chainId':'chainId',// chainID
-  'producer-name': 'producer-name', // producer 名称
-  'public-key': 'producer public key', // producer 公钥
-  'private-key': 'producer private key' // producer 私钥
-};
-```
+   首先需要配置 config.json 文件的4个参数。
 
-1. 注册BP
+   config.json 文件参数说明 
 
-   初始化一个 FIBOS 客户端，通过调用regproducerSync方法，传入四个参数进行注册。
+   ```
+   var config = {
+     'chainId':'chainId',// chainID
+     'producer-name': 'producer-name', // producer 名称
+     'public-key': 'producer public key', // producer 公钥
+     'private-key': 'producer private key' // producer 私钥
+   };
+   ```
+
+2. #### 注册 BP
+
+   发起注册 BP 操作：
+
+   ```
+   fibos register_bp.js
+   ```
+
+   详情解释：初始化一个 FIBOS 客户端，通过调用 regproducerSync 方法，传入四个参数进行注册。
 
    参数含义：
 
@@ -26,29 +36,33 @@ var config = {
    | url          | 区块生产者宣传网站           |
    | location     | 区块生产者服务器位置地区代码 |
 
-   发起注册 BP 操作：
+3. #### 注册BP详情
 
-   fibos register_bp.js
+   **注：** *该BP账号必须被投票数不为0才可以添加节点信息*
 
-2. 注册BP详情
+   添加节点信息操作：
 
-   ***注** 该BP账号必须被投票数不为0才可以添加节点信息
+   ```
+   fibos register_bp_details_set.js
+   ```
 
-   通过调用getTableRowsSync方法，查看列表,调用setSync方法，添加节点信息。
+   删除节点信息操作：
 
-   操作：
+   ```
+   fibos register_bp_details_del.js
+   ```
 
-   fibos unregister_bp_details_set.js
+   详情解释：初始化一个 FIBOS 客户端，通过调用 getTableRowsSync 方法，查看列表，通过调用 setSync 方法，添加节点信息，通过调用 delSync 方法，删除节点信息。
 
-   通过调用delSync方法，删除节点信息。
+4. #### 领取工资
 
-   操作：
+   发起领取工资操作：
 
-   fibos unregister_bp_details_del.js
+   ```
+   fibos claimre_wards.js
+   ```
 
-3. 领取工资
-
-   初始化一个 FIBOS 客户端，通过调用claimrewardsSync方法，传入1个参数进行领取工资。
+   详情解释：初始化一个 FIBOS 客户端，通过调用 claimrewardsSync 方法，传入1个参数进行领取工资。
 
    参数含义：
 
@@ -56,13 +70,15 @@ var config = {
    | :----------- | :--------------------------- |
    | producerName | 要领取工资的区块生产者账户名 |
 
-   发起领取工资操作：
+5. #### 注销BP
 
-   fibos claimre_wards.js
+   发起注销BP操作：
 
-4. 注销BP
+   ```
+   fibos unregister_bp.js
+   ```
 
-   初始化一个 FIBOS 客户端，通过调用unregprodSync方法，传入1个参数进行注销BP。
+   详情解释：初始化一个 FIBOS 客户端，通过调用unregprodSync方法，传入1个参数进行注销BP。
 
    参数含义：
 
@@ -70,17 +86,20 @@ var config = {
    | :----------- | :----------------------- |
    | producerName | 要注销的区块生产者账户名 |
 
-   发起领取工资操作：
-
-   fibos unregister_bp.js
-
    
+
 
 ## 日常操作
 
-1. 创建账号
+1. #### 创建账号
 
-   初始化一个 FIBOS 客户端，通过调用 newaccount 方法，传入4个参数进行创建账号。
+   配置 new_account.js 文件 newaccount 方法中的4个参数，然后发起创建账号操作：
+
+   ```
+   fibos new_account.js
+   ```
+
+   详情解释：初始化一个 FIBOS 客户端，通过调用 newaccount 方法，传入4个参数进行创建账号。
 
    | 参数    | 含义                        |
    | :------ | :-------------------------- |
@@ -89,13 +108,15 @@ var config = {
    | owner   | 被创建者账户 owner 权限公钥 |
    | active  | 被创建者 active 权限公钥    |
 
-   发起创建账号操作：
+2. #### 购买资源
 
-   fibos new_account.js
+   配置 buy_ram.js 文件 buyramSync 方法中的4个参数，发起购买资源操作：
 
-2. 购买资源
+   ```
+   fibos buy_ram.js
+   ```
 
-   初始化一个 FIBOS 客户端，通过调用 buyramSync 方法，传入4个参数进行购买资源。
+   详情解释：初始化一个 FIBOS 客户端，通过调用 buyramSync 方法，传入4个参数进行购买资源。
 
    | 参数          | 含义                       |
    | :------------ | :------------------------- |
@@ -104,13 +125,15 @@ var config = {
    | quant         | 购买存储资源所用的通证数量 |
    | authorization | 私钥对应的账号             |
 
-   发起购买资源操作：
+3. #### 购买内存
 
-   fibos buy_ram.js
+   配置 buy_rambytes.js 文件 buyrambytesSync 方法中的4个参数，发起购买内存操作：
 
-3. 购买内存
+   ```
+   fibos buy_rambytes.js
+   ```
 
-   初始化一个 FIBOS 客户端，通过调用 buyrambytesSync 方法，传入4个参数购买内存。
+   详情解释：初始化一个 FIBOS 客户端，通过调用 buyrambytesSync 方法，传入4个参数购买内存。
 
    | 参数          | 含义                   |
    | :------------ | :--------------------- |
@@ -119,13 +142,21 @@ var config = {
    | quant         | 购买的内存大小（字节） |
    | authorization | 私钥对应的账号         |
 
-   发起购买内存操作：
+4. #### 抵押资源/解压资源
 
-   fibos buy_rambytes.js
+   配置 delegate_bw.js 文件 delegatebwSync 方法中的5个参数，然后发起抵押资源操作：
 
-4. 抵押资源/解压资源
+   ```
+   fibos delegate_bw.js
+   ```
 
-   初始化一个 FIBOS 客户端，通过调用 delegatebwSync 方法，传入5个参数抵押资源。
+   配置 undelegate_bw.js 文件 undelegatebwSync 方法中的4个参数，然后发起解压资源操作：
+
+   ```
+   fibos undelegate_bw.js
+   ```
+
+   详情解释：初始化一个 FIBOS 客户端，通过调用 delegatebwSync 方法，传入5个参数抵押资源。
 
    | 参数               | 含义                                                         |
    | :----------------- | :----------------------------------------------------------- |
@@ -135,11 +166,7 @@ var config = {
    | stake_cpu_quantity | 抵押者为接受者抵押 FO 获取 CPU                               |
    | transfer           | 0 : 表示使用自己的资源为他人抵押；1 : 表示赠送资源给他人并抵押。注意：自己为自己抵押资源的时候，只能填 0 |
 
-   发起抵押资源操作：
-
-   fibos delegate_bw.js
-
-   初始化一个 FIBOS 客户端，通过调用 undelegatebwSync 方法，传入4个参数解压资源。
+   详情解释：初始化一个 FIBOS 客户端，通过调用 undelegatebwSync 方法，传入4个参数解压资源。
 
    | 参数                 | 含义                           |
    | :------------------- | :----------------------------- |
@@ -148,13 +175,15 @@ var config = {
    | unstake_net_quantity | 解除用来获取带宽资源的通证数量 |
    | unstake_cpu_quantity | 解除用来获取计算资源的通证数量 |
 
-   发起解压资源操作：
+5. #### 修改权限
 
-   fibos undelegate_bw.js
+   配置 updateauth.js 文件 updateauthSync 方法中的3个参数，然后发起修改权限操作：
 
-5. 修改权限
+   ```
+   fibos updateauth.js
+   ```
 
-   初始化一个 FIBOS 客户端，通过调用 updateauthSync 方法，传入4个参数解压资源。
+   详情解释：初始化一个 FIBOS 客户端，通过调用 updateauthSync 方法，传入3个参数修改权限。
 
    | 参数       | 含义             |
    | :--------- | :--------------- |
@@ -162,13 +191,15 @@ var config = {
    | parent     | 权限所属         |
    | key        | 将权限改为该公钥 |
 
-   发起修改操作：
+6. #### 投票
 
-   fibos updateauth.js
+   配置 vote.js 文件中的 voteproducerSync 方法中的3个参数，发起投票操作：
 
-6. 投票
+   ```
+   fibos vote.js
+   ```
 
-   初始化一个 FIBOS 客户端，通过调用 voteproducerSync 方法，传入3个参数进行投票。
+   详情解释：初始化一个 FIBOS 客户端，通过调用 voteproducerSync 方法，传入3个参数进行投票。
 
    | 参数       | 含义                                                         |
    | :--------- | :----------------------------------------------------------- |
@@ -176,11 +207,13 @@ var config = {
    | 中间的参数 | 为代理账户，不填表示直接给 BP 投票                           |
    | fibosnodes | 投票节点列表，需要由开发者自己按照字母序排序，一次性最多可以给30个 BP 投票 |
 
-   发起投票操作：
+7. #### 代理投票
 
-   fibos vote.js
+   配置 vote_agency.js 文件中的 voteproducerSync 方法中的3个参数，发起代理投票操作：
 
-7. 代理投票
+   ```
+   fibos vote_agency.js
+   ```
 
    初始化一个 FIBOS 客户端，通过调用 voteproducerSync 方法，传入3个参数进行投票。
 
@@ -190,6 +223,4 @@ var config = {
    | 中间的参数 | 为代理账户，填入则是通过代理账户给 BP 投票                   |
    | fibosnodes | 投票节点列表，需要由开发者自己按照字母序排序，一次性最多可以给30个 BP 投票 |
 
-   发起代理投票操作：
-
-   fibos vote_agency.js
+   
